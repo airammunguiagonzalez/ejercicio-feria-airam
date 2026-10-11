@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .contenedor {
+            background-color: white;
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h2>Feria de atracciones</h2>
+
+        <p>Introduce tu edad y altura:</p>
+
+        <label>Edad:</label>
+        <input type="number" id="edad" placeholder="Introduce tu edad">
+
+        <label>Altura (m):</label>
+        <input type="number" id="altura" placeholder="Introduce tu altura">
+
+        <button onclick="comprobarresultado()">Comprobar</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function comprobarresultado() {
+            let edad = Number(document.getElementById("edad").value);
+            let altura = Number(document.getElementById("altura").value);
+
+            if ( edad >= 16 && edad <= 60 && altura >= 1.40 && altura <= 1.90 ) {
+                document.getElementById("resultado").innerHTML =
+                    "✅ Puedes subir a la atracción";
+            } else {
+                document.getElementById("resultado").innerHTML =
+                    "❌ No cumples los requisitos";
+            }
+        }
+    </script>
+
+</body>
+</html>
